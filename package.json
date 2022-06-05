@@ -1,0 +1,32 @@
+{
+  "name": "@juln/typeof",
+  "version": "1.0.0",
+  "description": "封装过的typeof，比原生精明不少",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "unpkg": "dist/juln-hooks.min.js",
+  "typings": "lib/index.d.ts",
+  "scripts": {
+    "build": "npm run clean && rollup -c",
+    "clean": "rimraf ./dist && rimraf ./es && rimraf ./lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/z-juln/typeof.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/z-juln/typeof/issues"
+  },
+  "homepage": "https://github.com/z-juln/typeof#readme",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-node-resolve": "^13.1.3",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.64.0",
+    "rollup-plugin-typescript2": "^0.31.1",
+    "typescript": "^4.5.4"
+  }
+}

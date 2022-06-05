@@ -7,29 +7,51 @@
 
 ## api使用
 
-`$ npm install typeof`
-
-```javascript
-const { typeOf, isFunction, isNull, ... } = require('@juln/typeof');
-// or
-import { typeof, isFunction, isNull, ... } from '@juln/typeof';
+```
+$ npm install typeof
+or
+$ yarn add typeof
 ```
 
 ```javascript
+const { julnTypeof, isFunction, isNull, ... } = require('@juln/typeof');
+// or
+import { julnTypeof, isFunction, isNull, ... } from '@juln/typeof';
+```
 
-console.log(typeOf('a string'));
+```javascript
+import { julnTypeof } from '@juln/typeof';
+// 返回值均为小写
+
+console.log(julnTypeof('a string'));
 // -> 'string'
 
-console.log(typeOf([1, 2, 3, '4']));
+console.log(julnTypeof([1, 2, 3, '4']));
 // -> 'array'
 
-console.log(typeOf(null));
+console.log(julnTypeof(null));
 // -> 'null'
 
-console.log(typeOf(new Buffer(0)));
+console.log(julnTypeof(new Buffer(0)));
 // -> 'buffer'
 
 function Person() {}
-console.log(typeOf(new Person()));
+console.log(julnTypeof(new Person()));
 // -> 'person'
+```
+
+```typescript
+import { julnTypeof } from '@juln/typeof';
+import type { Type } from '@juln/typeof';
+// Type -> "string" | "number" | "bigint" | "boolean" | "symbol" | "undefined" | "object" | "function" | "null"
+// 在原生基础上多个"null"
+
+const result1 = julnTypeof('');
+// result1 -> Type 有Type包含的类型的提示
+
+const result2 = julnTypeof<0>('');
+// result2 -> string 无提示
+
+const result3 = julnTypeof<'Aaa'>('');
+// result2 -> Type | 'aaa' 有提示，并可自定义返回类型
 ```
