@@ -2,56 +2,27 @@
 
 ## 介绍
 
-- 封装过的typeof，比原生精明不少，且完美支持typescript类型提示
-- 提供了babel插件，直接替换原生的typeof
+- 封装过的 typeof，比原生精明不少，且完美支持 typescript 类型提示
+- 提供了 babel 插件，直接替换原生的 typeof
 
-## api使用
+## 安装
 
 ```
-$ npm install typeof
+$ npm install @juln/typeof
 or
-$ yarn add typeof
+$ yarn add @juln/typeof
 ```
 
-```javascript
-const { julnTypeof, isFunction, isNull, ... } = require('@juln/typeof');
-// or
-import { julnTypeof, isFunction, isNull, ... } from '@juln/typeof';
-```
+## api
 
-```javascript
-import { julnTypeof } from '@juln/typeof';
-// 返回值均为小写
+[typeof](doc/typeof-api.md)：封装后的 typeof
+<br />
+[isof](doc/isof-api.md)：一大堆判断类型的 api
 
-console.log(julnTypeof('a string'));
-// -> 'string'
+## babel 插件
 
-console.log(julnTypeof([1, 2, 3, '4']));
-// -> 'array'
+[typeof-babel](doc/typeof-babel.md)
 
-console.log(julnTypeof(null));
-// -> 'null'
+## 我的类型世界观
 
-console.log(julnTypeof(new Buffer(0)));
-// -> 'buffer'
-
-function Person() {}
-console.log(julnTypeof(new Person()));
-// -> 'person'
-```
-
-```typescript
-import { julnTypeof } from '@juln/typeof';
-import type { Type } from '@juln/typeof';
-// Type -> "string" | "number" | "bigint" | "boolean" | "symbol" | "undefined" | "object" | "function" | "null"
-// 在原生基础上多个"null"
-
-const result1 = julnTypeof('');
-// result1 -> Type 有Type包含的类型的提示
-
-const result2 = julnTypeof<0>('');
-// result2 -> string 无提示
-
-const result3 = julnTypeof<'Aaa'>('');
-// result2 -> Type | 'aaa' 有提示，并可自定义返回类型
-```
+[类型世界观](doc/type-outlook.md)
