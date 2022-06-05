@@ -8,7 +8,7 @@
   "typings": "lib/index.d.ts",
   "scripts": {
     "test": "jest --watch",
-    "coverage": "jest --colors --coverage",
+    "coverage": "jest --colors --coverage && jest-coverage-badges --output ./doc/assets",
     "build": "npm run clean && rollup -c && yarn coverage",
     "clean": "rimraf ./dist && rimraf ./es && rimraf ./lib && rimraf ./coverage"
   },
@@ -40,6 +40,7 @@
     "@wojtekmaj/enzyme-adapter-react-17": "^0.6.6",
     "enzyme": "^3.11.0",
     "jest": "^27.4.7",
+    "jest-coverage-badges": "^1.1.2",
     "jest-enzyme": "^7.1.2",
     "rimraf": "^3.0.2",
     "rollup": "^2.64.0",

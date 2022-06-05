@@ -1,5 +1,10 @@
 # typeof
 
+<img src='./doc/assets/badge-branches.svg' alt="badge-branches" />
+<img src='./doc/assets/badge-functions.svg' alt="badge-functions" />
+<img src='./doc/assets/badge-lines.svg' alt="badge-lines" />
+<img src='./doc/assets/badge-statements.svg' alt="badge-statements" />
+
 ## 介绍
 
 - 封装过的 typeof，比原生精明不少，且完美支持 typescript 类型提示
