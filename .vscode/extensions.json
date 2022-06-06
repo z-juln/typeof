@@ -1,6 +1,7 @@
 {
   "recommendations": [
     "orta.vscode-jest",
-    "andys8.jest-snippets"
+    "andys8.jest-snippets",
+    "wayou.vscode-todo-highlight"
   ]
 }
